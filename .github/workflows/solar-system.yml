@@ -32,3 +32,9 @@ jobs:
 
       - name: List reports
         run: ls -lart
+
+      - name: Archive and upload reports
+        uses: actions/upload-artifact
+        with:
+          name: Mocha-Test-Report
+          path: test-results.xml
