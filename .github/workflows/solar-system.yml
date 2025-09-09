@@ -16,7 +16,7 @@ jobs:
       - name: Install nodejs
         uses: actions/setup-node
         with:
-          node-version: 18
+          node_version: 18
 
       - name: Install dependencies
         run: npm install
