@@ -43,5 +43,5 @@ jobs:
       - name: Archive and upload reports
         uses: actions/upload-artifact@v4
         with:
-          name: Mocha-Test-Report
+          name: Mocha-Test-Report-${{ matrix.os }}-${{ matrix.node_version }}
           path: test-results.xml
