@@ -18,6 +18,9 @@ jobs:
       matrix:
         node_version: [18, 19, 20]
         os: ['ubuntu-latest', 'macos-latest']
+        exclude:
+          - node_version: 18
+            os: 'macos-latest'
     runs-on: ${{ matrix.os }}
     steps:
       - name: Download source code
@@ -41,4 +44,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Mocha-Test-Report
-          path: test-results.xml
+          path: test-results-${{ matrix.os }}-${{ matrix.node_version }}.xml
